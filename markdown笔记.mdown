@@ -1,0 +1,68 @@
+
+标题：
+1~6个#,代表一至六级标题
+ 如： 
+ #一级标题
+
+引用：
+在引用文本前加 >
+如：
+>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque id, ut inventore obcaecati distinctio a commodi, vero quasi reprehenderit dolore itaque laboriosam omnis cupiditate molestias! Placeat quam consequatur harum, ad.
+
+修饰和强调：
+如：*快乐*   ------斜体
+    **快乐** ------粗体
+    _快乐_  --------斜体
+
+列表：
+无序列表：
+使用*,+,-等  //注意有空格
+如：
+
+* hello
+* world 
+* 你好
+
++ hello
++ world
++ 你 
+
+有序列表：
+使用一般的数字接着一个英文句点作为项目标记
+如：
+
+1. hello
+2. world
+3. nihao
+
+链接：
+[链接名称](链接地址)
+
+[百度链接](http://www.baidu.com)
+
+
+图片：
+
+![图片](http://image.baidu.com/search/detail?ct=503316480&z=0&ipn=false&word=%E9%99%88%E5%A5%95%E8%BF%85&pn=4&spn=0&di=180516361190&pi=0&rn=1&tn=baiduimagedetail&istype=&ie=utf-8&oe=utf-8&in=3354&cl=2&lm=-1&st=&cs=1692106491%2C1125958825&os=1078252923%2C462361855&simid=3438064335%2C437818679&adpicid=0&ln=1934&fmq=1378374347070_R&fm=&ic=0&s=0&se=&sme=&tab=&face=&ist=&jit=&statnum=star&cg=star&bdtype=0&oriquery=&objurl=http%3A%2F%2Fa3.att.hudong.com%2F12%2F50%2F19300519593623133274506245867.jpg&fromurl=http%3A%2F%2Fyangshoucheng.h.baike.com%2Farticle-241673.html&gsm=0)
+
+代码：
+
+`code`
+
+```c++
+#inlsdcmosc
+```
+
+分割线：
+
+***
+
+表格：
+ 
+|1|2|3|4|
+
+|----|:----:|:----:|------:|
+||||
+||||
+||||
+||||

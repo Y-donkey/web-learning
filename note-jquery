@@ -1,0 +1,210 @@
+jQuery 属性选择器
+jQuery 使用 XPath 表达式来选择带有给定属性的元素。
+
+$("[href]") 选取所有带有 href 属性的元素。
+
+$("[href='#']") 选取所有带有 href 值等于 "#" 的元素。
+
+$("[href!='#']") 选取所有带有 href 值不等于 "#" 的元素。
+
+$("[href$='.jpg']") 选取所有 href 值以 ".jpg" 结尾的元素。
+
+
+隐藏函数： .hide();
+显示函数： .show();
+hide() 和 show() 都可以设置两个可选参数：speed 和 callback
+speed: slow, fast, normal,或者具体的毫秒数
+callback 参数是在 hide 或 show 函数完成之后被执行的函数名称
+
+
+jQuery 名称冲突
+jQuery 使用 $ 符号作为 jQuery 的简介方式。
+
+某些其他 JavaScript 库中的函数（比如 Prototype）同样使用 $ 符号。
+
+jQuery 使用名为 noConflict() 的方法来解决该问题。
+
+var jq=jQuery.noConflict()，帮助您使用自己的名称（比如 jq）来代替 $ 符号。
+
+切换函数： .toggle(speed,callback)       ：使用 show() 或 hide() 函数来切换 HTML 元素的可见状态
+
+
+
+jQuery 滑动函数 - slideDown, slideUp, slideToggle
+jQuery 拥有以下滑动函数：
+
+$(selector).slideDown(speed,callback)
+
+$(selector).slideUp(speed,callback)
+
+$(selector).slideToggle(speed,callback)
+
+
+jQuery Fade 函数 - fadeIn(), fadeOut(), fadeTo()
+jQuery 拥有以下 fade 函数：
+
+$(selector).fadeIn(speed,callback)
+
+$(selector).fadeOut(speed,callback)
+
+$(selector).fadeTo(speed,opacity,callback)
+speed 参数可以设置这些值："slow", "fast", "normal" 或 毫秒。
+
+fadeTo() 函数中的 opacity 参数规定减弱到给定的不透明度。
+
+
+改变html元素内容： .html();
+向所匹配的 HTML 元素内部追加内容: .append(content)
+prepend() 函数向所匹配的 HTML 元素内部预置（Prepend）内容
+after() 函数在所有匹配的元素之后插入 HTML 内容
+before() 函数在所有匹配的元素之前插入 HTML 内容。
+
+
+
+
+
+$( "*" )     选中所有内容
+
+$('div > p')    选择所有div元素里面的第一个子元素P
+$('div p')		选择所有div元素里面的p元素
+$(".prev + div")	选取prev后面的第一个的div兄弟节点
+$(".prev ~ div")	选取prev后面的所有的div兄弟节点
+$(".div:first")		找到第一个div
+$(".div:last")		找到最后一个div
+$(".div:even")		:even 选择所引值为偶数的元素，从 0 开始计数
+$(".div:odd")		:odd 选择所引值为奇数的元素，从 0 开始计数
+$(".aaron:eq(2)")	:eq(index)在匹配的集合中选择索引值为index的元素，从0开始计数
+$(".aaron:gt(3)")	:gt 选择匹配集合中所有索引值大于给定index参数的元素
+$(".aaron:lt(2)")	:lt 选择匹配集合中所有索引值小于给定index参数的元素
+$(".div:contains('contains')")	  查找所有class='div'中DOM元素中包含"contains"的元素节点
+$(".div:has(span)")		查找所有class='div'中DOM元素中包含"span"的元素节点
+$(':parent') 			选择所有含有子元素或者文本的父级元素
+$(':empty')				选择所有没有子元素的元素(包括文本节点)
+
+隐藏一个元素的方法：
+1：CSS display的值是none。
+2：type="hidden"的表单元素。
+3：宽度和高度都显式设置为0。
+4：一个祖先元素是隐藏的，该元素是不会在页面上显示
+5：CSS visibility的值是hidden
+6：CSS opacity的指是0
+
+如果元素中占据文档中一定的空间,元素被认为是可见的。
+可见元素的宽度或高度，是大于零。
+元素的visibility: hidden 或 opacity: 0被认为是可见的，因为他们仍然占用空间布局。
+
+$('div[name=p1]')		查找所有div中，属性name=p1的div元素
+$('div[p2]')			查找所有div中，有属性p2的div元素
+$('div[name|="-"]')		查找所有div中，有属性name中的值只包含一个连字符“-”的div元素
+$('div[name~="a"]')		查找所有div中，有属性name中的值包含一个连字符“空”的div元素
+$('div[name^=imooc]')	查找所有div中，属性name的值是用imooc开头的
+$('div[name$=imooc]')	查找所有div中，属性name的值是用imooc结尾的
+$('div[name*="test"]')	查找所有div中，有属性name中的值包含一个test字符串的div元素
+$('div[testattr!="true"]')		查找所有div中，有属性testattr中的值没有包含"true"的div
+$('.first-div a:first-child')		查找所有class="first-div"下的a元素，只取第一个
+$(':input')				查找所有 input, textarea, select 和 button 元素
+$('input:text')			匹配所有input元素中类型为text的input元素
+$('input:password')		匹配所有input元素中类型为password的input元素
+
+
+
+
+attr()有4个表达式
+
+1：attr(传入属性名)：获取属性的值
+2：attr(属性名, 属性值)：设置属性的值
+3：attr(属性名,函数值)：设置属性的函数值
+4：attr(attributes)：给指定元素设置多个属性值，即：{属性名一: “属性值一” , 属性名二: “属性值二” , … … }
+
+删除属性： removeAttr
+
+.html()   .text()   .val()
+
+addClass()
+removeClass()
+.css()
+
+创建节点：如：$("<div id='test' class='aaron'>我是文本节点</div>")
+
+内部插入元素：　.append()   .appendTo()   .prepend()  .prependTo()
+
+相邻插入.after()  .before()
+如：$(".test2").after('<p style="color:blue">after,在匹配元素之后增加</p>', '<p style="color:blue">多参数</p>')
+
+外部插入： .insertAfter()   .insertBefore
+
+.empty()
+.remove()    	remove比empty好用的地方就是可以传递一个选择器表达式用来过滤将被移除的匹配元素集合，可以选择性的删除指定的节点
+.clone()
+.replaceWith()  .replaceAll()
+.wrap()  包裹元素
+.unwrap()  
+.wrapAll
+.wrapInner()
+
+.children()   儿子节点
+.find()        子孙节点
+.parent()      父节点
+.parents()     祖先节点
+.closest   
+parents()和.closest() 的区别：
+1：起始位置不同：.closest开始于当前元素 .parents开始于父元素
+2：遍历的目标不同：.closest要找到指定的目标，.parents遍历到文档根元素，closest向上查找，知道找到一个匹配就停止查找，parents一直查找到根元素，并将匹配的元素加入集合:
+3：结果不同：.closest返回的是包含零个或一个元素的jquery对象，parents返回的是包含零个或一个或多个元素的jquery对象
+
+.next()
+.prev()
+.siblings()   左右兄弟节点
+.add()
+each(function(index, element)
+
+
+
+
+事件：
+$().click()
+$().dbclick()
+$().mousedown/up()
+$().mouseover()
+$().mouseout()
+$().mouseenter()
+$().mouseleave()
+$(selector).hover(handlerIn, handlerOut)		handlerIn(eventObject)：当鼠标指针进入元素时触发执行的事件函数
+												handlerOut(eventObject)：当鼠标指针离开元素时触发执行的事件函数
+
+如： $("p").hover(
+        function() {
+            $(this).css("background", 'red');
+        },
+        function() {
+            $(this).css("background", '#bbffaa');
+        }
+    );
+
+$().focusin()
+$().focusout()
+
+
+鼠标事件：e 
+e.target
+
+当 textarea 或文本类型的 input 元素中的文本被选择时，会发生 select 事件。     $().select()
+$().keydown()
+$().keyup()
+
+$().on('click',function(){})
+$().on('mouseup mousedown',function(){})
+$().on(
+{
+	click:function(){}
+	mouseover:function(){}
+})
+
+$().off()
+
+event.type：获取事件的类型
+event.pageX 和 event.pageY：获取鼠标当前相对于页面的坐标
+event.preventDefault() 方法：阻止默认行为
+event.stopPropagation() 方法：阻止事件冒泡
+event.which：获取在鼠标单击时，单击的是鼠标的哪个键
+event.currentTarget : 在事件冒泡过程中的当前DOM元素

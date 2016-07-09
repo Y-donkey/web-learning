@@ -1,0 +1,295 @@
+请使用 document.write() 仅仅向文档输出写内容。
+如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖
+
+可以在文本字符串中使用反斜杠对代码行进行换行。下面的例子会正确地显示：
+document.write("Hello \
+World!");
+
+不过，您不能像这样折行：
+document.write \
+("Hello World!");
+
+
+
+重新声明 JavaScript 变量
+如果重新声明 JavaScript 变量，该变量的值不会丢失：
+在以下两条语句执行后，变量 carname 的值依然是 "Volvo"：
+var carname="Volvo";
+var carname;
+
+try{
+	//code
+}
+catch(err){
+	err.message;  //错误信息
+}
+
+通过类名查找 HTML 元素在 IE 5,6,7,8 中无效。
+
+HTML元素的
+内容：innerHTML
+属性：attribute  //如：document.getElementById("image").src="landscape.jpg";
+改变样式： document.getElementById(id).style.property=new style
+		如： document.getElementById("p2").style.color="blue";
+隐藏： document.getElementById('p1').style.visibility='hidden'
+显示： document.getElementById('p1').style.visibility='visible'
+
+onload 和 onunload 事件
+onload 和 onunload 事件会在用户进入或离开页面时被触发。
+onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。
+onload 和 onunload 事件可用于处理 cookie。
+
+onchange 事件
+onchange 事件常结合对输入字段的验证来使用。
+
+onmouseover 和 onmouseout 事件
+onmouseover 和 onmouseout 事件可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数。
+
+onmousedown、onmouseup 以及 onclick 事件
+onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。
+
+onfocus    光标聚焦时
+
+onmouseover  //鼠标滑过
+onmouseout   //鼠标离开
+
+创建元素 ：createElement
+创建文本节点： createTextNode
+追加节点： .appendChild();
+如：var para=document.createElement("p");
+	var node=document.createTextNode("这是新段落。");
+	para.appendChild(node);
+
+创建新的 HTML 元素 - insertBefore()
+上一个例子中的 appendChild() 方法，将新元素作为父元素的最后一个子元素进行添加。
+如果不希望如此，您可以使用 insertBefore() 方法
+
+
+删除已有的 HTML 元素
+如需删除 HTML 元素，您必须首先获得该元素的父元素：
+如：var parent=document.getElementById("div1");
+	var child=document.getElementById("p1");
+	parent.removeChild(child);
+
+
+常用的解决方案：找到您希望删除的子元素，然后使用其 parentNode 属性来找到父元素：
+var child=document.getElementById("p1");
+child.parentNode.removeChild(child);
+
+
+使用函数来构造对象：
+如： 
+<script>
+function person(firstname,lastname,age,eyecolor)
+{
+this.firstname=firstname;
+this.lastname=lastname;
+this.age=age;
+this.eyecolor=eyecolor;
+ 
+this.changeName=changeName;
+function changeName(name)
+{
+this.lastname=name;
+}
+}
+myMother=new person("Steve","Jobs",56,"green");
+myMother.changeName("Ballmer");
+document.write(myMother.lastname);
+</script>
+
+
+
+所有 JavaScript 数字均为 64 位
+JavaScript 不是类型语言。与许多其他编程语言不同，JavaScript 不定义不同类型的数字，比如整数、短、长、浮点等等。
+JavaScript 中的所有数字都存储为根为 10 的 64 位（8 比特），浮点数。
+
+精度
+整数（不使用小数点或指数计数法）最多为 15 位。
+小数的最大位数是 17，但是浮点运算并不总是 100% 准确：
+
+八进制和十六进制
+
+如果前缀为 0，则 JavaScript 会把数值常量解释为八进制数，如果前缀为 0 和 "x"，则解释为十六进制数。
+实例
+var y=0377;
+var z=0xFF;
+
+提示：绝不要在数字前面写零，除非您需要进行八进制转换。。
+
+setTimeout()
+未来的某时执行代码
+
+clearTimeout()
+取消setTimeout()
+
+
+一些常用的 HTML DOM 方法：
+•getElementById(id) - 获取带有指定 id 的节点（元素）
+•appendChild(node) - 插入新的子节点（元素）
+•removeChild(node) - 删除子节点（元素）
+
+一些常用的 HTML DOM 属性：
+•innerHTML - 节点（元素）的文本值
+•parentNode - 节点（元素）的父节点
+•childNodes - 节点（元素）的子节点
+•attributes - 节点（元素）的属性节点
+
+
+
+节点类型			NodeType
+
+元素 				1
+属性 				
+文本 				3
+注释  				8
+文档				9
+
+
+getElementsByClassName() 在 Internet Explorer 5,6,7,8 中无效
+
+如需替换 HTML DOM 中的元素，请使用 replaceChild() 方法：    //注意参数
+
+
+JS代码什么时候应该包含在head中，什么时候应该包含在body中？
+	1：当javascript要在页面加载过程中动态建立一些web页面的内容时，应该放在body中
+	2：定义为函数并用于页面事件的javascript应当放在head中，因为它会在body之前加载
+
+如果不使用var定义的话，变量的作用域就是全局的
+
+数据类型转换函数： toString , toBoolean , parseInt , parseFloat
+
+var a=b=1;     //这样的话，a就是局部变量，b却是全局变量。
+
+如果变量既没有被声明也没有被赋值，那么则视为NULL
+如果变量被声明了但没有被赋值则视为undefined
+如果把NULL值用作函数的参数会引发错误，而undefined不会
+如果一个字符型或者布尔型的变量不能被强制转化为一个数字，那么它就被认为是NaN（not a number)
+使用关键字const定义一个常量，应该在一开始声明时就初始化
+
+类型检测：
+	1： typedef 100    "number"
+	    typedef true   "boolean"
+	    typedef function  "function"
+	    typedef(undefined)  "undefined"
+	    typedef new Object()  "object"
+	    typedef [1,2]   "object"
+	    typedef NaN   "number"
+	    typedef null  "object"
+
+
+	2:  [1,2] instanceof Array == true
+		new Object() instanceof Array == false
+
+
+	3:  Object.prototype.tostring
+
+	4: constructor
+
+	5:duck type
+
+
+document.write()    输出内容
+alert()    弹出对话框，提示警告
+confirm()  确认信息选择框
+
+prompt(参数1，参数2)  
+参数1：要显示在消息对话框中的文本，不可修改 参数2：文本框中的内容，可以修改
+弹出消息对话框,通常用于询问一些需要与用户交互的信息。弹出消息对话框（包含一个确定按钮、取消按钮与一个文本输入框）。
+
+打开窗口：
+window.open([URL], [窗口名称], [参数字符串])   //用单引号分别包括三个窗口，用逗号隔开
+URL：可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。
+窗口名称：可选参数，被打开窗口的名称。
+    1.该名称由字母、数字和下划线字符组成。
+    2."_top"、"_blank"、"_selft"具有特殊意义的名称。
+       _blank：在新窗口显示目标网页
+       _self：在当前窗口显示目标网页
+       _top：框架网页中在上部窗口中显示目标网页
+    3.相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。
+    4.name 不能包含有空格。
+参数字符串：可选参数，设置窗口参数，各参数用逗号隔开。
+
+第三个属性：
+	top:窗口顶部离开屏幕顶部的像素数
+	left:窗口左端离开屏幕左端的像素数
+	width:窗口宽度
+	height:窗口高度
+	menubar:窗口有没有菜单   yes/no
+	toolbar:窗口有没有工具栏
+	status:窗口有没有状态栏
+	scrollbars:窗口有没有滚动条
+
+
+关闭窗口：  window.close(地址)
+
+
+文档对象模型DOM:
+
+document.getElementById('')    //通过id获取元素    结果为NULL/ [object HTMLParagraphElement]
+
+innerHTML 属性用于获取或替换 HTML 元素的内容。
+语法：Object.innerHTML
+Object是获取的元素对象，如通过document.getElementById("ID")获取的元素。
+
+改变HTML样式：
+Object.style.property=new style;
+property是各种样式如color,font-size.....
+
+
+改变元素选择器类名：object.className = classname；  
+
+
+
+
+js的六种基本类型：
+	原始类型包括：string, number, boolean, null, undefined
+	对象类型：object
+
+tips: 
+	1: 将一个变量num转换为数字： num= num-0;
+	2: 将一个变量num转换为字符串： num= num+ '';
+
+等于：
+ 	'1.23'==1.23 ------true
+ 	 0==false    ------true
+ 	 null==undefined --true
+
+严格等于：
+	a===b     必须类型相同，内容相同才返回true   //NaN != NaN , new object() != new object()
+
+函数声明：
+	function fd(){               //函数声明会有函数前置，所以在函数声明前调用函数也是可以的，但是函数表达式就不行
+	//do sth
+	}
+
+函数表达式：
+	var fe=funtion(){
+	//do sth
+	};
+
+
+with语句
+
+严格模式是一种特殊的执行模式，它修复了部分语言上的不足，提供更强的错误检查，并增强安全性
+严格模式下不可以使用with语句，不允许未声明的变量被赋值
+
+创建对象的方法：
+	1： var obj={//}
+	2:  var obj=Object.creat({//})
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
